@@ -133,7 +133,10 @@ import {
     TouchableWithoutFeedback,
     Keyboard,
     View,
-    Image
+    Image,
+    Modal,
+    TouchableHighlight,
+    TouchableOpacity
 } from 'react-native';
 import { Block, Checkbox, Text, Button as GaButton, theme } from 'galio-framework';
 
@@ -141,7 +144,6 @@ import { Block, Checkbox, Text, Button as GaButton, theme } from 'galio-framewor
 import { Button, Icon, Input } from '../components';
 import { Images, nowTheme } from '../constants';
 
-import logo from '../assets/imgs/logo.png';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -154,8 +156,11 @@ class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+
             email: null,
             password: null,
+            repeat: null,
+            modalVisible: false,
             errors: {
                 email: "",
 
@@ -165,7 +170,11 @@ class Signup extends React.Component {
     }
 
     login = () => {
-        this.props.navigation.navigate('Type Popup')
+        this.setModalVisible(true);
+    }
+
+    setModalVisible = (visible) => {
+        this.setState({ modalVisible: visible });
     }
 
     render() {
@@ -254,6 +263,83 @@ class Signup extends React.Component {
                                                     }
                                                 />
                                             </Block>
+                                            <View style={styles.centeredView}>
+                                                <Modal
+                                                    animationType="slide"
+                                                    transparent={true}
+                                                    visible={this.state.modalVisible}
+                                                    onRequestClose={() => {
+                                                        this.setState({ modalVisible: false })
+
+                                                    }}
+                                                >
+                                                    <View style={styles.centeredView}>
+                                                        <View style={styles.modalView}>
+                                                            <Text style={styles.textStyle}>Select Account Type</Text>
+                                                            <View style={styles.containermodel}>
+                                                                <View style={{
+                                                                    borderColor: '#800080', borderRadius: 10,
+                                                                    padding: 10,
+
+
+                                                                    elevation: 2,
+                                                                    borderWidth: 1, height: 120
+                                                                }}>
+                                                                    <View style={styles.openButton} >
+                                                                        <Image
+                                                                            source={require('../assets/imgs/user.png')}
+
+
+                                                                        />
+                                                                        <TouchableHighlight
+
+                                                                            onPress={() => {
+                                                                                this.setModalVisible(!this.state.modalVisible);
+                                                                            }}
+                                                                        >
+
+                                                                            <Text style={styles.textStyletext}>Individual</Text>
+                                                                        </TouchableHighlight>
+                                                                    </View>
+                                                                </View>
+                                                                <View style={{
+                                                                    borderColor: '#800080', borderRadius: 10,
+                                                                    padding: 10,
+                                                                    marginLeft: 20,
+
+                                                                    elevation: 2,
+                                                                    borderWidth: 1, height: 120
+                                                                }}>
+                                                                    <View style={styles.openButtonbuss} >
+                                                                        <Image
+                                                                            source={require('../assets/imgs/business.png')}
+
+
+                                                                        />
+                                                                        <TouchableHighlight
+
+                                                                            onPress={() => {
+                                                                                this.setModalVisible(!this.state.modalVisible);
+                                                                            }}
+                                                                        >
+
+                                                                            <Text style={styles.textStyletext}>Business</Text>
+                                                                        </TouchableHighlight>
+                                                                    </View>
+                                                                </View>
+                                                            </View>
+                                                            <View style={styles.container}>
+                                                                <TouchableOpacity
+                                                                    style={styles.buttonpro}
+                                                                    onPress={this.onPress}
+                                                                >
+                                                                    <Text style={{ color: "white" }}>Proceed</Text>
+                                                                </TouchableOpacity>
+                                                            </View>
+                                                        </View>
+                                                    </View>
+                                                </Modal>
+                                            </View>
                                             <Block center>
                                                 <Button onPress={this.login} color="google" round style={styles.createButton}>
                                                     <Text
@@ -402,11 +488,70 @@ const styles = StyleSheet.create({
         borderRadius: theme.SIZES.BASE * 1.75,
         justifyContent: 'center',
         marginHorizontal: 10
-    }
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22,
+
+    },
+    modalView: {
+        marginBottom: 4,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        height: 300,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
+    },
+    openButton: {
+        backgroundColor: "white",
+
+
+    },
+    openButtonbuss: {
+        backgroundColor: "white",
+
+
+    },
+    textStyle: {
+        marginTop: 0,
+        color: "black",
+        fontWeight: "bold",
+        fontSize: 18,
+        textAlign: "center",
+        marginBottom: 10,
+    },
+    textStyletext: {
+        marginTop: 10,
+        color: "black",
+        fontWeight: "bold",
+
+        textAlign: "center",
+        marginBottom: 10,
+    },
+    container: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    buttonpro: {
+        alignItems: "center",
+        textAlign: "center"
+        , backgroundColor: "#800000",
+        paddingHorizontal: 40,
+        paddingTop: 8,
+        paddingBottom: 8,
+        borderRadius: 10,
+        marginTop: '8%'
+    },
 });
-
-const mapStateToProps = (state) => ({
-
-})
 
 export default Signup;

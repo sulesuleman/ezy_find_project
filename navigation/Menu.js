@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   Linking,
+  View
   // AsyncStorage
 } from "react-native";
 import { Block, Text, theme } from "galio-framework";
@@ -16,8 +17,8 @@ import { DrawerItem as DrawerCustomItem, Icon } from "../components";
 
 import nowTheme from "../constants/Theme";
 const { width } = Dimensions.get("screen");
-// var token=null
-// var cat=null
+
+var token=null
 
 function CustomDrawerContent({
   drawerPosition,
@@ -28,21 +29,18 @@ function CustomDrawerContent({
   ...rest
 }) {
   
-    // const [token, setToken] = useState('');
-    // const [category, setCategory] = useState('');
+  //   const [token, setToken] = useState('');
   
-    // useEffect( () => {
-    //   async function fetchData() {
-    //   setToken(await AsyncStorage.getItem('token')),
-    //   setCategory(await AsyncStorage.getItem('category'))
-    //   console.log('data login ka', token,category)
-    // }
+  //   useEffect( () => {
+  //     async function fetchData() {
+  //     setToken(await AsyncStorage.getItem('token'))
+  //   }
   
   // fetchData();});
     
   const insets = useSafeArea();
   
-    const screens = [        
+    const guestscreens = [        
       "Request an Item",
       "Buy",
       "Bid",
@@ -55,45 +53,28 @@ function CustomDrawerContent({
       "My Favourites",
       "My Reviews"
     ];
-    // const farmerscreens = [        
-    //   "Asaan Kisaan Market",
-    //   "Crop Prediction",
-    //   "Disease Detection",
-    //   "Farmer Dashboard",
-    //   "Track Order",
-    //   "Message",
-    //   "Profile",
-    //   "Settings",
-    //   "Contact Us"
-  
-    // ];
-    // const customerscreens = [        
-    //   "Asaan Kisaan Market",
-    //   "Cart",
-    //   "Wishlist",
-    //   "Profile",
-    //   "Track Order",
-    //   "Settings",
-    //   "Contact Us"
-  
-    // ];
-    // const vendorscreens = [        
-    //   "Asaan Kisaan Market",
-    //   "Vendor Dashboard",
-    //   "Track Order",
-    //   "Profile",
-    //   "Settings",
-    //   "Contact Us"
-    // ];
-   
-   
-    
-    
+    const loginscreens = [        
+      "Request an Item",
+      "Buy",
+      "Bid",
+      "Hire",
+      "Find Business",
+      "Specials",
+      "Catalogue",
+      "Special Maps",
+      "Categories",
+      "My Favourites",
+      "My Reviews"
+    ];
+
   return (
     <Block
       style={styles.container}
       forceInset={{ top: "always", horizontal: "never" }}
     >
+      <TouchableOpacity 
+        onPress={() => navigation.navigate('SIGN IN')}
+      >
       <Block style={styles.header}>
         
         {/* <Image style={styles.logo} source={Images.Logo} /> */}
@@ -107,24 +88,38 @@ function CustomDrawerContent({
         </Block>
         <Text style={{fontSize: 13}}>Tap to Sign in/Sign up Now</Text>
       </Block>
+      </TouchableOpacity>
       <Block
             style={{ borderColor: 'black', width: '93%',
-              borderWidth: StyleSheet.hairlineWidth, marginHorizontal: 10, marginVertical:'4%'}}
-          />
+            borderWidth: StyleSheet.hairlineWidth, marginHorizontal: 10, marginVertical:'4%'}}
+      />
       <Block flex style={{ paddingLeft: 8, paddingRight: 14 }}>
         <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
           {
-          screens.map((item, index) => {
-            return (
-              <DrawerCustomItem
-                title={item}
-                key={index}
-                navigation={navigation}
-                focused={state.index === index ? true : false}
-              />
-            );
-          }) 
-          }
+            token === null ?
+              guestscreens.map((item, index) => {
+                return (
+                  <DrawerCustomItem
+                    title={item}
+                    key={index}
+                    navigation={navigation}
+                    focused={state.index === index ? true : false}
+                  />
+                );
+              })
+              :
+              loginscreens.map((item, index) => {
+                return (
+                  <DrawerCustomItem
+                    title={item}
+                    key={index}
+                    navigation={navigation}
+                    focused={state.index === index ? true : false}
+                  />
+                );
+              })
+
+              }
           <Block flex style={{ marginTop: 24, marginVertical: 8, paddingHorizontal: 8 }}>
           <Block
             style={{ borderColor: 'black', width: '93%', borderWidth: StyleSheet.hairlineWidth, marginHorizontal: 10}}
@@ -135,7 +130,7 @@ function CustomDrawerContent({
           <DrawerCustomItem title = "Rate the App" navigation={navigation}/>
           <DrawerCustomItem title = "Share the App" navigation={navigation}/>
           <DrawerCustomItem title = "Give FeedBack" navigation={navigation} />
-          <DrawerCustomItem title = "SIGN IN" navigation={navigation}/>
+          {/* <DrawerCustomItem title = "SIGN IN" navigation={navigation}/> */}
           <DrawerCustomItem title = "SIGN OUT" navigation={navigation}/>
         </Block>
         }

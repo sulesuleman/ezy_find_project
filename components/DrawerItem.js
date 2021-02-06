@@ -16,9 +16,9 @@ class DrawerItem extends React.Component {
           <Icon
             name=""
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "Buy":
@@ -26,9 +26,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="shopping-cart"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "Bid":
@@ -37,9 +37,9 @@ class DrawerItem extends React.Component {
             name="app2x"
             family="NowExtra"
 
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "Hire":
@@ -47,9 +47,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="clock"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "Find Business":
@@ -57,9 +57,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="pagelines"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
 
@@ -68,9 +68,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="star"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
             
           />
         );
@@ -79,9 +79,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="basket2x"
             family="NowExtra"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
 
@@ -90,9 +90,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="star"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "Categories":
@@ -100,9 +100,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="comments"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "My Favourites":
@@ -110,9 +110,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="heart"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "My Reviews":
@@ -120,9 +120,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="clipboard-list"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "Rate the App":
@@ -130,9 +130,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="settings-gear-642x"
             family="NowExtra"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "Share the App":
@@ -140,9 +140,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="phone"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
       case "Give FeedBack":
@@ -150,9 +150,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="phone"
             family="Font-Awesome"
-            size={20}
+            size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-            style={{ opacity: 0.5 }}
+            // style={{ opacity: 0.5 }}
           />
         );
 
@@ -161,8 +161,8 @@ class DrawerItem extends React.Component {
           <Icon
             name="spaceship2x"
             family="NowExtra"
-            size={20}
-            style={{ borderColor: "rgba(0,0,0,0.5)", opacity: 0.5 }}
+            size={24}
+            style={{ borderColor: "rgba(0,0,0,0.5)" }}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
           />
         );
@@ -171,8 +171,8 @@ class DrawerItem extends React.Component {
           <Icon
             name="share"
             family="NowExtra"
-            size={20}
-            style={{ borderColor: "rgba(0,0,0,0.5)", opacity: 0.5 }}
+            size={24}
+            style={{ borderColor: "rgba(0,0,0,0.5)" }}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
           />
         );
@@ -181,8 +181,8 @@ class DrawerItem extends React.Component {
           <Icon
             name="share"
             family="NowExtra"
-            size={20}
-            style={{ borderColor: "rgba(0,0,0,0.5)", opacity: 0.5 }}
+            size={24}
+            style={{ borderColor: "rgba(0,0,0,0.5)", }}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
           />
         );
@@ -203,30 +203,15 @@ class DrawerItem extends React.Component {
       <TouchableOpacity
         style={{ height: 60 }}
         onPress={async () => 
-             title == 'SIGN' ?
-              await axiosInstance.logOut().then((response) => {
-                if (response.status === 200) {
-                  AsyncStorage.clear();
-                  AsyncStorage.removeItem("token");
-                  AsyncStorage.removeItem("category");
-                  AsyncStorage.removeItem("userpk");
-                  AsyncStorage.removeItem("username");
-                  AsyncStorage.removeItem("profilePicture");
-                  AsyncStorage.removeItem("firstname");
-                  // console.log("Category: ",await AsyncStorage.getItem("category"));
-                  // console.log("token: ",await AsyncStorage.getItem("token"));
-                  console.log(response.status);
+             title == 'SIGN OUT' ?
+             
                   navigation.navigate('Onboarding')
-                }
-                else (e) => {
-                  console.log("Logout Error ", e);
-                }
-              })
+                
               :
               navigation.navigate(title)
         }>
         <Block flex row style={containerStyles}>
-          <Block middle flex={0.1} style={{ marginRight: 5 }}>
+          <Block middle flex={0.2} style={{ marginRight: 5 }}>
             {this.renderIcon()}
           </Block>
           <Block row center flex={0.9}>

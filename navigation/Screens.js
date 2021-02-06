@@ -15,17 +15,9 @@ import Buy from '../screens/buy';
 import Bid from '../screens/bid';
 import Hire from '../screens/hire';
 import FindBusiness from '../screens/business';
+import Review from '../screens/review';
 
-// import Articles from '../screens/Articles';
 import Onboarding from '../screens/Onboarding';
-
-//Cart Screen starts here//
-// import SwipeValueBasedUi from '../screens/Cart/productlist'
-// import Form from '../screens/Cart/checkout1';
-// import Address from '../screens/Cart/checkout2';
-// import PaymentForm from '../screens/Cart/checkout3';
-// import CreditForm from '../screens/Cart/checkout4';
-//Cart screen ends here//
 
 // drawer
 import CustomDrawerContent from "./Menu";
@@ -44,214 +36,13 @@ function RequestStack(props) {
   return (
     <Stack.Navigator initialRouteName="Request an Item" mode="card" headerMode="screen">
       <Stack.Screen name="Request an Item" component={Request} options={{
-        header: ({ navigation, scene }) => (<Header title="RequestItems" navigation={navigation} scene={scene} />),
-        backgroundColor: "white"
+        header: ({ navigation, scene }) => (
+        <Header title="RequestItems" navigation={navigation} scene={scene} />),
+          cardStyle: { backgroundColor: "#FFFFFF" },
       }} />
     </Stack.Navigator>
   );
 }
-
-// function CartStack(props) {
-//   return (
-//     <Stack.Navigator initialRouteName="Cart" mode="card" headerMode="screen">
-//       <Stack.Screen name="Cart" component={SwipeValueBasedUi} options={{
-//         header:({ navigation, scene }) => (<Header title="Cart" navigation={navigation} scene={scene} />),
-//         cardStyle: { backgroundColor: "#FFFFFF" },
-//       }}/>
-//        <Stack.Screen
-//         name="Checkout"
-//         component={Form}
-//         options={{
-//           header: ({ navigation, scene }) => (
-//             <Header
-
-//               back
-//               black 
-//               title="Checkout"
-//               navigation={navigation}
-//               scene={scene}
-//             />
-//           ),
-//           headerTransparent: false,
-//           backgroundColor: "#FFFFFF"
-//         }}
-//       />
-//  <Stack.Screen
-//         name="Address"
-//         component={Address}
-//         options={{
-//           header: ({ navigation, scene }) => (
-//             <Header
-
-//               back
-//               black 
-//               title="Checkout"
-//               navigation={navigation}
-//               scene={scene}
-//             />
-//           ),
-//           headerTransparent: false,
-//           backgroundColor: "#FFFFFF"
-//         }}
-//       />
-//     <Stack.Screen
-//         name="Payment"
-//         component={PaymentForm}
-//         options={{
-//           header: ({ navigation, scene }) => (
-//             <Header
-
-//               back
-//               black 
-//               title="Checkout"
-//               navigation={navigation}
-//               scene={scene}
-//             />
-//           ),
-//           cardStyle: { backgroundColor: "#FFFFFF" },
-//           headerTransparent: false,
-//         }}
-//       /> 
-//       <Stack.Screen
-//       name="Maincheckout"
-//       component = {CreditForm}
-//       options={{
-//         header: ({ navigation, scene }) => (
-//           <Header
-
-//             back
-//             black 
-//             title="Checkout"
-//             navigation={navigation}
-//             scene={scene}
-//           />
-//         ),
-//         cardStyle: { backgroundColor: "#FFFFFF" },
-//         headerTransparent: false,
-//       }}
-//     />
-//     </Stack.Navigator>
-//   );
-// }
-// function TrackStack(props) {
-//   return (
-//     <Stack.Navigator initialRouteName="Track Order" mode="card" headerMode="screen">
-
-// <Stack.Screen
-//       name="Track Order"
-//       component={TrackOrder}
-//       options={{
-//         header: ({ navigation, scene }) => (
-//           <Header
-//             transparent
-
-//             black
-//             title="Track Order"
-//             navigation={navigation}
-//             scene={scene}
-//           />
-//         ),
-//         cardStyle: { backgroundColor: "#FFFFFF" },
-//         headerTransparent: false
-//       }
-//     }
-//     />
-//     <Stack.Screen
-//       name="Track Details"
-//       component={OrderProcess}
-//       options={{
-//         header: ({ navigation, scene }) => (
-//           <Header
-//             transparent
-//             back
-//             black
-//             title="Track Details"
-//             navigation={navigation}
-//             scene={scene}
-//           />
-//         ),
-//         cardStyle: { backgroundColor: "#FFFFFF" },
-//         headerTransparent: false
-//       }
-//     }
-//     />
-//      </Stack.Navigator>
-//   );
-// }
-// function SettingsStack(props) {
-//   return (
-//     <Stack.Navigator initialRouteName="Settings" mode="card" headerMode="screen">
-//       <Stack.Screen
-//         name="Settings"
-//         component={Setting}
-//         options={{
-//           header: ({ navigation, scene }) => (
-//             <Header
-//               transparent
-//               white
-//               title="SETTINGS"
-//               navigation={navigation}
-//               scene={scene}
-//             />
-//           ),
-//           cardStyle: { backgroundColor: "#FFFFFF" },
-//           headerTransparent: true
-//         }
-//         }
-//       />
-
-//       <Stack.Screen
-//         name="Faq"
-//         component={FAQ}
-//         options={{
-//           header: ({ navigation, scene }) => (
-//             <Header
-//               transparent
-//               black
-//               back
-//               title="FAQ"
-//               navigation={navigation}
-//               scene={scene}
-//             />
-//           ),
-//           cardStyle: { backgroundColor: "#FFFFFF" },
-//           headerTransparent: true
-//         }
-//         }
-//       />
-//       <Stack.Screen
-//         name="About"
-//         component={About}
-//         options={{
-//           header: ({ navigation, scene }) => (
-//             <Header
-//               transparent
-//               white
-//               back
-//               title="About Us"
-//               navigation={navigation}
-//               scene={scene}
-//             />
-//           ),
-//           cardStyle: { backgroundColor: "#FFFFFF" },
-//           headerTransparent: true
-//         }
-//         }
-//       />
-//     </Stack.Navigator>
-//   );
-// }
-
-// function ArticlesStack(props) {
-//   return (
-//     <Stack.Navigator initialRouteName="Articles" mode="card" headerMode="screen">
-//       <Stack.Screen name="Articles" component={Articles} options={{
-//         header: ({ navigation, scene }) => (<Header title="Articles" navigation={navigation} scene={scene} />),
-//         backgroundColor: '#FFFFFF'
-//       }} />
-//     </Stack.Navigator>
-//   );
-// }
 
 function AccountStack(props) {
   return (
@@ -268,6 +59,7 @@ function AccountStack(props) {
               scene={scene}
             />
           ),
+          cardStyle: { backgroundColor: "white" },
           headerTransparent: true
         }}
       />
@@ -283,7 +75,7 @@ function AccountStack(props) {
               scene={scene}
             />
           ),
-
+          cardStyle: { backgroundColor: "white" },
           headerTransparent: false
         }}
       />
@@ -299,7 +91,7 @@ function AccountStack(props) {
               scene={scene}
             />
           ),
-
+          cardStyle: { backgroundColor: "white" },
           headerTransparent: false
         }}
       />
@@ -396,8 +188,31 @@ function FindBusinessStack(props) {
               scene={scene}
             />
           ),
-          cardStyle: { backgroundColor: "#FFFFFF" },
+          cardStyle: { backgroundColor: "white" },
           headerTransparent: true
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function ReviewStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="My Reviews" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="My Reviews"
+        component={Review}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              black
+              title="My Reviews"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
         }}
       />
     </Stack.Navigator>
@@ -446,10 +261,10 @@ function AppStack(props) {
       <Drawer.Screen name="Special Maps" component={MapsStack} />
       <Drawer.Screen name="Categories" component={CategoryStack} />
       <Drawer.Screen name="My Favourites" component={FavStack} />
-      <Drawer.Screen name="My Reviews" component={ReviewStack} />
       <Drawer.Screen name="Rate the App" component={RateAppStack} />
       <Drawer.Screen name="Share the App" component={ShareAppStack} />
       <Drawer.Screen name="Give FeedBack" component={FeedbackStack} /> */}
+      <Drawer.Screen name="My Reviews" component={ReviewStack} />
       <Drawer.Screen name="SIGN IN" component={AccountStack} />
     </Drawer.Navigator>
 
