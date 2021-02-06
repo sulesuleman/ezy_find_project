@@ -14,29 +14,25 @@ export default class Onboarding extends React.Component {
       <Block flex style={styles.container}>
         <StatusBar barStyle="light-content" />
         <Block flex>
-          <ImageBackground
-            source={Images.Onboarding}
-            style={{ flex: 1, height: height, width, zIndex: 1 }}
-          />
           <Block space="between" style={styles.padded}>
             <Block>
               <Block middle>
-                <Image source={Images.NowLogo} style={{ width: 115, height: 124, bottom: 200, position: 'absolute' }} />
+                <Image source={Images.NowLogo} style={{ width: '100%', resizeMode:'contain', height: 200, bottom: 100, position: 'absolute' }} />
               </Block>
-              <Block>
+              {/* <Block>
                 <Block middle>
                   <Text
                     style={{
-                      fontFamily: 'montserrat-regular', bottom: 50, position: 'absolute', letterSpacing: 2, paddingHorizontal: 20, textAlign: 'center'
+                      fontFamily: 'montserrat-bold', bottom: 50, position: 'absolute', letterSpacing: 2, paddingHorizontal: 20, textAlign: 'center'
                     }}
-                    color="white"
+                    color="black"
                     size={44}
                   >
-                    WELCOME TO ASAN KASAN
+                    WELCOME TO EZY_FIND
 
                   </Text>
                 </Block>
-              </Block>
+              </Block> */}
              <Block middle row style={{ marginTop: 15, marginBottom: 30}}>
                 <Text
                   color="white"
@@ -64,7 +60,7 @@ export default class Onboarding extends React.Component {
                 <Button
                   shadowless
                   style={styles.button}
-                  color={nowTheme.COLORS.PRIMARY}
+                  color={"#c70039"}
                   onPress={() => navigation.navigate('App')}
                 >
                   <Text
@@ -85,7 +81,7 @@ export default class Onboarding extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme.COLORS.BLACK,
+    backgroundColor: theme.COLORS.WHITE,
     marginTop: Platform.OS === 'android' ? -HeaderHeight : 0
   },
   padded: {
@@ -97,6 +93,7 @@ const styles = StyleSheet.create({
   button: {
     width: width - theme.SIZES.BASE * 4,
     height: theme.SIZES.BASE * 3,
+    borderRadius:30,
     shadowRadius: 0,
     shadowOpacity: 0
   },
