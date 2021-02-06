@@ -181,15 +181,15 @@ function FindBusinessStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              transparent
+
               black
-              title="Find Business"
+              title="Enter Company Info"
               navigation={navigation}
               scene={scene}
             />
           ),
           cardStyle: { backgroundColor: "white" },
-          headerTransparent: true
+          headerTransparent: false
         }}
       />
     </Stack.Navigator>
