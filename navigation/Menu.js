@@ -7,7 +7,7 @@ import {
   Image,
   TouchableOpacity,
   Linking,
-  AsyncStorage
+  // AsyncStorage
 } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 import { useSafeArea } from "react-native-safe-area-context";
@@ -96,17 +96,21 @@ function CustomDrawerContent({
     >
       <Block style={styles.header}>
         
-        <Image style={styles.logo} source={Images.Logo} />
-        <Block right style={styles.headerIcon}>
+        {/* <Image style={styles.logo} source={Images.Logo} /> */}
+        <Block middle style={styles.headerIcon}>
           <Icon
-            name="align-left-22x"
-            family="NowExtra"
-            size={15}
-            color={"white"}
+            name="user-circle"
+            family="Font-Awesome"
+            size={130}
+            color={"#c70039"}
           />
         </Block>
+        <Text style={{fontSize: 13}}>Tap to Sign in/Sign up Now</Text>
       </Block>
-      
+      <Block
+            style={{ borderColor: 'black', width: '93%',
+              borderWidth: StyleSheet.hairlineWidth, marginHorizontal: 10, marginVertical:'4%'}}
+          />
       <Block flex style={{ paddingLeft: 8, paddingRight: 14 }}>
         <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
           {

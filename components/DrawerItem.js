@@ -14,20 +14,20 @@ class DrawerItem extends React.Component {
       case "Request an Item":
         return (
           <Icon
-            name="building"
+            name=""
             family="Font-Awesome"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
       case "Buy":
         return (
           <Icon
-            name="app2x"
-            family="NowExtra"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            name="shopping-cart"
+            family="Font-Awesome"
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
@@ -37,18 +37,18 @@ class DrawerItem extends React.Component {
             name="app2x"
             family="NowExtra"
 
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
       case "Hire":
         return (
           <Icon
-            name="leaf"
+            name="clock"
             family="Font-Awesome"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
@@ -57,8 +57,8 @@ class DrawerItem extends React.Component {
           <Icon
             name="pagelines"
             family="Font-Awesome"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
@@ -66,11 +66,12 @@ class DrawerItem extends React.Component {
       case "Specials":
         return (
           <Icon
-            name="truck"
+            name="star"
             family="Font-Awesome"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
+            
           />
         );
       case "Catalogue":
@@ -78,8 +79,8 @@ class DrawerItem extends React.Component {
           <Icon
             name="basket2x"
             family="NowExtra"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
@@ -89,8 +90,8 @@ class DrawerItem extends React.Component {
           <Icon
             name="star"
             family="Font-Awesome"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
@@ -99,28 +100,28 @@ class DrawerItem extends React.Component {
           <Icon
             name="comments"
             family="Font-Awesome"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
       case "My Favourites":
         return (
           <Icon
-            name="profile-circle"
-            family="NowExtra"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            name="heart"
+            family="Font-Awesome"
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
       case "My Reviews":
         return (
           <Icon
-            name="badge2x"
-            family="NowExtra"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            name="clipboard-list"
+            family="Font-Awesome"
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
@@ -129,8 +130,8 @@ class DrawerItem extends React.Component {
           <Icon
             name="settings-gear-642x"
             family="NowExtra"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
@@ -139,8 +140,8 @@ class DrawerItem extends React.Component {
           <Icon
             name="phone"
             family="Font-Awesome"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
@@ -149,8 +150,8 @@ class DrawerItem extends React.Component {
           <Icon
             name="phone"
             family="Font-Awesome"
-            size={18}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            size={20}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             style={{ opacity: 0.5 }}
           />
         );
@@ -160,9 +161,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="spaceship2x"
             family="NowExtra"
-            size={18}
+            size={20}
             style={{ borderColor: "rgba(0,0,0,0.5)", opacity: 0.5 }}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
           />
         );
       case "SIGN OUT":
@@ -170,9 +171,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="share"
             family="NowExtra"
-            size={18}
+            size={20}
             style={{ borderColor: "rgba(0,0,0,0.5)", opacity: 0.5 }}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
           />
         );
         case "SIGN IN":
@@ -180,9 +181,9 @@ class DrawerItem extends React.Component {
           <Icon
             name="share"
             family="NowExtra"
-            size={18}
+            size={20}
             style={{ borderColor: "rgba(0,0,0,0.5)", opacity: 0.5 }}
-            color={focused ? nowTheme.COLORS.WHITE : "red"}
+            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
           />
         );
       default:
@@ -237,7 +238,7 @@ class DrawerItem extends React.Component {
               }}
               size={12}
               bold={focused ? true : false}
-              color={focused ? nowTheme.COLORS.WHITE : "red"}
+              color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
             >
               {title}
             </Text>
@@ -255,9 +256,9 @@ const styles = StyleSheet.create({
     color: "white"
   },
   activeStyle: {
-    backgroundColor: nowTheme.COLORS.GOOGLE,
+    backgroundColor: '#c70039',
     borderRadius: 30,
-    color: "red"
+    color: "#c70039"
   },
   shadow: {
     shadowColor: theme.COLORS.GOOGLE,

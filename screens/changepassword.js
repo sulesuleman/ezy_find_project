@@ -1,5 +1,12 @@
 import React,{Component} from 'react';
-import { StyleSheet, TouchableOpacity, Text, View, TextInput } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View, TextInput, TouchableWithoutFeedback,
+    Keyboard, } from 'react-native';
+
+
+const DismissKeyboard = ({ children }) => (
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>{children}</TouchableWithoutFeedback>
+);
+
 
 export default class ChangePassword extends Component{
     constructor(props){
@@ -11,32 +18,34 @@ export default class ChangePassword extends Component{
     
     render(){
         return(
-            <View style={styles.background}>
-                <View style={styles.foreground}>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={text => onChangeText(text)}
-                    placeholder='Enter Old Password'
-                />
-                <TextInput
-                    style={styles.input}
-                    onChangeText={text => onChangeText(text)}
-                    placeholder='Enter New Password'
-                />
-                <TextInput
-                    style={styles.input}
-                    onChangeText={text => onChangeText(text)}
-                    placeholder='Confirm Old Password'
-                />
-                
-                    <TouchableOpacity
-                        style={styles.button}
-                        onPress={this.onPress}
-                        >
-                        <Text style={{color:"white"}}>Continue</Text>
-                    </TouchableOpacity>
+            <DismissKeyboard>
+                <View style={styles.background}>
+                    <View style={styles.foreground}>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={text => onChangeText(text)}
+                        placeholder='Enter Old Password'
+                    />
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={text => onChangeText(text)}
+                        placeholder='Enter New Password'
+                    />
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={text => onChangeText(text)}
+                        placeholder='Confirm Old Password'
+                    />
+                    
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={this.onPress}
+                            >
+                            <Text style={{color:"white"}}>Continue</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View>
+            </DismissKeyboard>
         )
     }
 }

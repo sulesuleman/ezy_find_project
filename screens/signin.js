@@ -38,12 +38,20 @@ class Signin extends React.Component {
         };
     }
 
+    login = () => {
+        this.props.navigation.navigate('SIGN UP')
+    }
+
+    changePassword = () => {
+        this.props.navigation.navigate('changePassword')
+    }
+
     render() {
         return (
             <DismissKeyboard>
-                <Block flex middle>
-                    <Block style={styles.SigninContainer}>
-                        <Block flex space="evenly">
+                <Block flex={1} middle>
+                    <Block flex={1} style={styles.SigninContainer}>
+                        <Block flex={1} space="evenly">
                             <Block flex={0.2} middle>
                                 <Image
                                     source={require('../assets/imgs/logo.png')}
@@ -51,13 +59,12 @@ class Signin extends React.Component {
 
                             </Block>
 
-                            <Block flex={0} middle
+                            <Block  middle
                                 style={{ width: width * 0.4 }}
                             >
                                 <Text
                                     style={{
                                         fontFamily: 'montserrat-regular',
-                                        // textAlign: 'left'
                                     }}
 
                                     size={18}
@@ -65,13 +72,13 @@ class Signin extends React.Component {
                                     SIGN IN
                                 </Text>
                             </Block>
-                            <Block flex={1} middle space="between">
-                                <Block center flex={1}>
-                                    <Block flex space="evenly">
+                            <Block flex={0.8} middle space="between">
+                                <Block middle flex={1}>
+                                    <Block flex={1} space="evenly">
 
                                         <Block width={width * 0.8} style={{ marginBottom: 5 }}>
                                             <Input
-                                                placeholder="User Name"
+                                                placeholder="Email"
                                                 style={styles.inputs}
                                                 autoCapitalize="none"
 
@@ -109,6 +116,7 @@ class Signin extends React.Component {
 
                                         </Block>
                                         <Text
+                                            onPress={this.changePassword}
                                             style={{
                                                 fontFamily: 'montserrat-regular',
                                                 textAlign: 'center',
@@ -142,7 +150,6 @@ class Signin extends React.Component {
                                                 }
                                             />
                                         </Block>
-
                                         <Block center>
                                             <Button onPress={this.login} color="google" round style={styles.createButton}>
                                                 <Text
@@ -151,20 +158,21 @@ class Signin extends React.Component {
                                                     color={nowTheme.COLORS.WHITE}
                                                 >
                                                     Continue
-                            </Text>
+                                                </Text>
                                             </Button>
                                         </Block>
-                                        <Block flex={0.4} middle style={styles.socialConnect}>
-                                            <Block flex={0.5} row middle>
-                                                <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
-                                                <View>
+
+                                        <Block flex={1} middle style={styles.socialConnect}>
+                                            <Block flex={0.2} row middle>
+                                                <Block flex style={{ height: 1, backgroundColor: 'black' }} />
+                                                <Block flex>
                                                     <Text style={{ width: '100%', textAlign: 'center' }}>Sign Up With</Text>
-                                                </View>
-                                                <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
+                                                </Block>
+                                                <Block flex style={{ height: 1, backgroundColor: 'black' }} />
 
                                             </Block>
 
-                                            <Block flex={0.5} row middle space="between" style={{ marginBottom: 18 }}>
+                                            <Block flex={0.5} row middle >
 
                                                 <GaButton
                                                     round
@@ -211,12 +219,12 @@ class Signin extends React.Component {
                                                     style={[styles.social, styles.shadow]}
                                                 />
                                             </Block>
-                                        </Block>
-                                        <Block center>
-                                            <Text>
-                                                Dont have an account? <Text style={{ fontSize: 16 }}>SIGN UP</Text>
-                                            </Text>
-                                        </Block>
+                                            <Block middle flex={0.3}>
+                                                <Text>
+                                                    Dont have an account? <Text style={{ fontSize: 16 }}>SIGN UP</Text>
+                                                </Text>
+                                            </Block>
+                                        </Block>  
                                     </Block>
                                 </Block>
                             </Block>

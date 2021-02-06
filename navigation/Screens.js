@@ -277,7 +277,6 @@ function AccountStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              transparent
               back
               title="SIGN UP"
               navigation={navigation}
@@ -285,17 +284,15 @@ function AccountStack(props) {
             />
           ),
 
-          headerTransparent: true
+          headerTransparent: false
         }}
       />
-
       <Stack.Screen
-        name="Change Passowrd"
+        name="changePassword"
         component={ChangePassword}
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              transparent
               back
               title="Change Password"
               navigation={navigation}
@@ -303,7 +300,7 @@ function AccountStack(props) {
             />
           ),
 
-          headerTransparent: true
+          headerTransparent: false
         }}
       />
     </Stack.Navigator>
