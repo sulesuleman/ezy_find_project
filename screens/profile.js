@@ -44,57 +44,13 @@ class Profile extends Component {
     this.props.navigation.navigate('changePassword')
   }
 
-  renderItem = ({ item }) => {
-    const { navigate } = this.props.navigation;
+  onSignin = () => {
+    this.props.navigation.navigate('SIGN IN')
+  }
 
-    switch (item.type) {
-      case "switch":
-        return (
-          <Block row middle space="between" style={styles.rows}>
-            <Text style={{ fontFamily: 'montserrat-regular' }} size={14} color="#525F7F">{item.title}</Text>
-            <Switch
-              onValueChange={() => this.toggleSwitch(item.id)}
-              value={this.state[item.id]}
-            />
-          </Block>
-        );
-      case "button":
-        return (
-          <Block style={styles.rows}>
-            <TouchableOpacity onPress={() => navigate(item.id)}>
-              <Block row middle space="between" style={{ paddingTop: 7 }}>
-                <Text style={{ fontFamily: 'montserrat-regular' }} size={14} color="#525F7F">{item.title}</Text>
-                <Icon
-                  name="angle-right"
-                  family="font-awesome"
-                  style={{ paddingRight: 5 }}
-                />
-              </Block>
-            </TouchableOpacity>
-          </Block>
-        );
-      default:
-        break;
-    }
-  };
-
+  
   render() {
-    const recommended = [
-      { title: "Username,Address,Category", id: "face", type: "button" },
-
-    ];
-    const payment = [
-
-      { title: "Language", id: "language", type: "button" },
-      { title: "Notifications", id: "NotificationsSettings", type: "button" }
-    ];
-
-    const privacy = [
-      { title: "FAQ", id: "Faq", type: "button" },
-      { title: "App Rating", id: "Privacy", type: "button" },
-      { title: "About Us", id: "About", type: "button" }
-    ];
-
+  
     return (
 
       <DismissKeyboard>
@@ -131,10 +87,15 @@ class Profile extends Component {
                     borderRadius: 110, borderWidth: 5, borderColor: 'pink'
                   }}
                 >
+                  <TouchableOpacity
+                    onPress={this.onSignin}
+                  >
                   <Image
+                    
                     source={Images.ProfilePicture}
                     style={styles.avatar}
                   />
+                  </TouchableOpacity>
                 </Block>
               </Block>
               <Block middle flex={0.1} style={{ top: theme.SIZES.BASE / 2 + 20, width: '50%', paddingHorizontal: '5%' }}>

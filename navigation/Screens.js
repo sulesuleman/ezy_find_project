@@ -23,7 +23,8 @@ import Hire from '../screens/hire';
 import FindBusiness from '../screens/business';
 import Review from '../screens/review';
 import SpecialMaps from '../screens/specialmaps';
-
+import Payment from '../screens/payment';
+import Clicks from '../screens/click';
 import Onboarding from '../screens/Onboarding';
 
 // drawer
@@ -151,11 +152,10 @@ function BuyStack(props) {
     <Stack.Navigator initialRouteName="Buy" mode="card" headerMode="screen">
       <Stack.Screen
         name="Buy"
-        component={Buy}
+        component={Payment}
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              transparent
               black
               title="Buy"
               navigation={navigation}
@@ -163,7 +163,7 @@ function BuyStack(props) {
             />
           ),
           cardStyle: { backgroundColor: "#FFFFFF" },
-          headerTransparent: true
+          headerTransparent: false
         }}
       />
     </Stack.Navigator>
@@ -176,11 +176,10 @@ function BidStack(props) {
     <Stack.Navigator initialRouteName="Bid" mode="card" headerMode="screen">
       <Stack.Screen
         name="Bid"
-        component={Bid}
+        component={Clicks}
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              transparent
               black
               title="Bid"
               navigation={navigation}
@@ -188,7 +187,7 @@ function BidStack(props) {
             />
           ),
           cardStyle: { backgroundColor: "#FFFFFF" },
-          headerTransparent: true
+          headerTransparent: false
         }}
       />
     </Stack.Navigator>

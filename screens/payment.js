@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, TouchableOpacity, Text, View, TextInput, ScrollView, Image, Dimensions } from 'react-native';
+
+
 export default class Payment extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+        
         }
     }
-
     render() {
         return (
             <ScrollView  >
@@ -59,21 +60,21 @@ export default class Payment extends Component {
                     <View style={{ flex: 1, flexDirection: 'row', paddingTop: 10 }}>
                         <View style={styles.img}>
                             <Image
-                                source={require('../assets/master.png')}
+                                source={require('../assets/icons/Cropping/master.png')}
 
 
                             />
                         </View>
                         <View style={styles.img}>
                             <Image
-                                source={require('../assets/visa.png')}
+                                source={require('../assets/icons/Cropping/visa.png')}
 
 
                             />
                         </View>
                         <View style={styles.img}>
                             <Image
-                                source={require('../assets/paypal.png')}
+                                source={require('../assets/icons/Cropping/paypal.png')}
 
 
                             />
