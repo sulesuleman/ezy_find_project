@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, AsyncStorage, Linking } from "react-native";
+import { StyleSheet, Image, TouchableOpacity, AsyncStorage, Linking } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 
 import Icon from "./Icon";
@@ -13,12 +13,16 @@ class DrawerItem extends React.Component {
     switch (title) {
       case "Request an Item":
         return (
-          <Icon
-            name=""
-            family="Font-Awesome"
-            size={24}
-            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-          // style={{ opacity: 0.5 }}
+          // <Icon
+          //   name=""
+          //   family="Font-Awesome"
+          //   size={24}
+          //   color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
+          // // style={{ opacity: 0.5 }}
+          // />
+          <Image
+            source={require('../assets/icons/Cropping/side_1.png')}
+            style={{position:'absolute',height:'80%', resizeMode:"center"}}
           />
         );
       case "Buy":
@@ -33,23 +37,24 @@ class DrawerItem extends React.Component {
         );
       case "Bid": 
         return (
-          <Icon
-            name="legal"
-            family="Font-Awesome"
-            size={24}
-            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-          // style={{ opacity: 0.5 }}
+          // <Icon
+          //   name="legal"
+          //   family="Font-Awesome"
+          //   size={24}
+          //   color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
+          // // style={{ opacity: 0.5 }}
+          // />
+          <Image
+            source={require('../assets/icons/Cropping/bid.png')}
+            style={{position:'absolute',height:'80%', resizeMode:"center"}}
           />
         );
       case "Hire":
         return (
-          <Icon
-            name=""
-            family="Font-Awesome"
-            size={24}
-            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-          // style={{ opacity: 0.5 }}
-          />
+          <Image
+          source={require('../assets/icons/Cropping/time.png')}
+          style={{position:'absolute',height:'80%', resizeMode:"center"}}
+        />
         );
       case "Find Business":
         return (
@@ -75,19 +80,23 @@ class DrawerItem extends React.Component {
         );
       case "Catalogue":
         return (
-          <Icon
-            name=""
-            family=""
-            size={24}
-            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-          // style={{ opacity: 0.5 }}
+          // <Icon
+          //   name=""
+          //   family=""
+          //   size={24}
+          //   color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
+          // // style={{ opacity: 0.5 }}
+          // />
+          <Image
+            source={require('../assets/icons/Cropping/list.png')}
+            style={{position:'absolute',height:'80%', resizeMode:"center"}}
           />
         );
 
       case "Special Maps":
         return (
           <Icon
-            name=""
+            name="map-marker"
             family="Font-Awesome"
             size={24}
             color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
@@ -116,43 +125,31 @@ class DrawerItem extends React.Component {
         );
       case "My Reviews":
         return (
-          <Icon
-            name=""
-            family="Font-Awesome"
-            size={24}
-            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-          // style={{ opacity: 0.5 }}
+          <Image
+            source={require('../assets/icons/Cropping/list02.png')}
+            style={{position:'absolute',height:'80%', resizeMode:"center"}}
           />
         );
       case "Rate the App":
         return (
-          <Icon
-            name=""
-            family=""
-            size={24}
-            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-          // style={{ opacity: 0.5 }}
+          <Image
+            source={require('../assets/icons/Cropping/star-chat.png')}
+            style={{position:'absolute',resizeMode:"center"}}
           />
         );
       case "Share the App":
         return (
-          <Icon
-            name="share-alt"
-            family="Font-Awesome"
-            size={24}
-            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-          // style={{ opacity: 0.5 }}
+          <Image
+            source={require('../assets/icons/Cropping/share.png')}
+            style={{position:'absolute',height:'80%', resizeMode:"center"}}
           />
         );
       case "Give FeedBack":
         return (
-          <Icon
-            name=""
-            family=""
-            size={24}
-            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
-          // style={{ opacity: 0.5 }}
-          />
+          <Image
+          source={require('../assets/icons/Cropping/feedback.png')}
+          style={{position:'absolute',height:'80%', resizeMode:"center"}}
+        />
         );
 
       case "GETTING STARTED":
@@ -167,12 +164,9 @@ class DrawerItem extends React.Component {
         );
       case "SIGN OUT":
         return (
-          <Icon
-            name="sign-out"
-            family="Font-Awesome"
-            size={24}
-            style={{ borderColor: "rgba(0,0,0,0.5)" }}
-            color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
+          <Image
+            source={require('../assets/icons/Cropping/logout.png')}
+            style={{position:'absolute',height:'80%', resizeMode:"center"}}
           />
         );
       case "SIGN IN":
@@ -214,13 +208,13 @@ class DrawerItem extends React.Component {
           <Block row center flex={0.9}>
             <Text
               style={{
-                fontFamily: "montserrat-regular",
+                // fontFamily: "montserrat-regular",
                 textTransform: "uppercase",
                 fontWeight: "300"
               }}
               size={12}
               bold={focused ? true : false}
-              color={focused ? nowTheme.COLORS.WHITE : "#c70039"}
+              color={focused ? nowTheme.COLORS.WHITE : "black"}
             >
               {title}
             </Text>

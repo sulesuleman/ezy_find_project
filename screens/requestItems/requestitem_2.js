@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { StyleSheet, TouchableOpacity, Text, View, TextInput, ScrollView, Dimensions } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import MapView from 'react-native-maps';
-import Switch from '../components/Switch';
+import Switch from '../../components/Switch';
 
 
-export default class Request extends Component {
+export default class RequestItem2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,13 +37,6 @@ export default class Request extends Component {
                             <Text style={styles.text}>Set Location</Text>
                         </View>
                         <View style={styles.inputWrap}>
-                            {/* <Switch
-                                trackColor={{ false: "#ffffff", true: "#81b0ff" }}
-                                thumbColor={this.state.isEnabled ? "#c70039" : "#c70039"}
-                                ios_backgroundColor="#3e3e3e"
-                                onValueChange={this.toggleSwitch}
-                                value={this.state.isEnabled}
-                            /> */}
                             <Switch
                                 onValueChange={this.toggleSwitch}
                                 value={this.state.isEnabled} 

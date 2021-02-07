@@ -9,13 +9,20 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 //screens
 import Signin from '../screens/signin';
 import Signup from '../screens/signup';
+import Profile from '../screens/profile';
 import ChangePassword from '../screens/changepassword';
-import Request from '../screens/request';
+
+//Request an Item screens
+import RequestItem1 from '../screens/requestItems/requestitem_1';
+import RequestItem2 from '../screens/requestItems/requestitem_2';
+
+
 import Buy from '../screens/buy';
 import Bid from '../screens/bid';
 import Hire from '../screens/hire';
 import FindBusiness from '../screens/business';
 import Review from '../screens/review';
+import SpecialMaps from '../screens/specialmaps';
 
 import Onboarding from '../screens/Onboarding';
 
@@ -35,24 +42,64 @@ const Drawer = createDrawerNavigator();
 function RequestStack(props) {
   return (
     <Stack.Navigator initialRouteName="Request an Item" mode="card" headerMode="screen">
-      <Stack.Screen name="Request an Item" component={Request} options={{
+      <Stack.Screen 
+        name="Request an Item" 
+        component={RequestItem1} 
+        options={{
         header: ({ navigation, scene }) => (
-        <Header title="RequestItems" navigation={navigation} scene={scene} />),
+        <Header 
+          title="RequestItems" 
+          navigation={navigation} 
+          scene={scene} 
+          />),
           cardStyle: { backgroundColor: "#FFFFFF" },
-      }} />
+      }} 
+      />
+      <Stack.Screen
+        name="Request2"
+        component={RequestItem2}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              back
+              title="Request and Item"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      /> 
     </Stack.Navigator>
   );
 }
 
 function AccountStack(props) {
   return (
-    <Stack.Navigator initialRouteName="SIGN IN" mode="card" headerMode="screen">
+    <Stack.Navigator initialRouteName="Profile" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              title="Profile"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      />
       <Stack.Screen
         name="SIGN IN"
         component={Signin}
         options={{
           header: ({ navigation, scene }) => (
             <Header
+              back
               transparent
               title=""
               navigation={navigation}
@@ -196,6 +243,122 @@ function FindBusinessStack(props) {
   );
 }
 
+function SpecialsStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Specials" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Specials"
+        component={FindBusiness}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              black
+              title="Specials"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function CatalogueStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Catalogue" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Catalogue"
+        component={FindBusiness}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              black
+              title="Catalogue"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function MapsStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Special Maps" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Special Maps"
+        component={SpecialMaps}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              black
+              title="Special Maps"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+
+function CategoryStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Categories" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Categories"
+        component={FindBusiness}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              black
+              title="Categories"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function FavStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="My Favourites" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="My Favourites"
+        component={FindBusiness}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              black
+              title="My Favourites"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
 function ReviewStack(props) {
   return (
     <Stack.Navigator initialRouteName="My Reviews" mode="card" headerMode="screen">
@@ -207,6 +370,77 @@ function ReviewStack(props) {
             <Header
               black
               title="My Reviews"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+
+function RateAppStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Rate the App" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Rate the App"
+        component={FindBusiness}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              black
+              title="Rate the App"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+
+function ShareAppStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Share the App" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Share the App"
+        component={FindBusiness}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              black
+              title="Share the App"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "white" },
+          headerTransparent: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function FeedbackStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Give FeedBack" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Give FeedBack"
+        component={FindBusiness}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              black
+              title="Give FeedBack"
               navigation={navigation}
               scene={scene}
             />
@@ -256,15 +490,15 @@ function AppStack(props) {
       <Drawer.Screen name="Bid" component={BidStack} />
       <Drawer.Screen name="Hire" component={HireStack} />
       <Drawer.Screen name="Find Business" component={FindBusinessStack} />
-      {/* <Drawer.Screen name="Specials" component={SpecialsStack} />
+      <Drawer.Screen name="Specials" component={SpecialsStack} />
       <Drawer.Screen name="Catalogue" component={CatalogueStack} />
       <Drawer.Screen name="Special Maps" component={MapsStack} />
       <Drawer.Screen name="Categories" component={CategoryStack} />
       <Drawer.Screen name="My Favourites" component={FavStack} />
+      <Drawer.Screen name="My Reviews" component={ReviewStack} /> 
       <Drawer.Screen name="Rate the App" component={RateAppStack} />
       <Drawer.Screen name="Share the App" component={ShareAppStack} />
-      <Drawer.Screen name="Give FeedBack" component={FeedbackStack} /> */}
-      <Drawer.Screen name="My Reviews" component={ReviewStack} />
+      <Drawer.Screen name="Give FeedBack" component={FeedbackStack} /> 
       <Drawer.Screen name="SIGN IN" component={AccountStack} />
     </Drawer.Navigator>
 
